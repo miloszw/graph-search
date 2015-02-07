@@ -1,0 +1,6 @@
+# num of vertices, num of edges
+4 3
+# start vertice, end vertice
+0 1
+1 2
+0 3
