@@ -23,6 +23,7 @@ with open(argv[1]) as f:
 def dfs(matrix, act, node=0, visited=[]):
 	if node in visited:
 		return
+	visited.append(node)
 	act(node)
 	for neighbor,boolean in enumerate(matrix[node]):
 		if boolean:
@@ -30,10 +31,20 @@ def dfs(matrix, act, node=0, visited=[]):
 
 
 def bfs(matrix, act):
-	pass
+	queue = [0]
+	visited = []
+	while queue:
+		node = queue.pop()
+		if node in visited:
+			continue
+		visited.append(node)
+		act(node)
+		for neighbor,boolean in enumerate(matrix[node]):
+			if boolean:
+				queue.append(neighbor)
 	
 
 # test
 res = []
-dfs(matrix, res.append)
+bfs(matrix, res.append)
 print(res)
