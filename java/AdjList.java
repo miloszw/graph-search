@@ -1,6 +1,5 @@
 import java.io.*;
 import java.util.*;
-import java.util.concurrent.Callable;
 
 class AdjList {
 	public static void main(String[] args) {
@@ -17,12 +16,11 @@ class AdjList {
 			int E = Integer.valueOf(s[1]);
 			String line;
 			int from, to;
-			LinkedList<Integer> l;
 			while ((line = readLine(reader)) != null) {
 				s = line.split(" ");
 				from = Integer.valueOf(s[0]);
 				to = Integer.valueOf(s[1]);
-				if ((l = list.get(from)) == null)
+				if (list.get(from) == null)
 					list.put(from, new LinkedList<Integer>());
 				list.get(from).add(to);
 			}
